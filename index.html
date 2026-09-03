@@ -102,6 +102,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
 .history-menu-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:15px;}
 .history-nav-btn{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius-sm);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:700;font-size:14px;color:var(--dark);box-shadow:var(--shadow);}
 .history-nav-btn:hover{border-color:var(--red-primary);background:var(--red-light);color:var(--red-primary);}
+.history-nav-btn.telegram-btn{background:#e8f4fc;border-color:#0088cc;color:#0088cc;}
+.history-nav-btn.telegram-btn:hover{background:#d0e8fc;}
 
 .clean-tx-list{display:flex;flex-direction:column;gap:10px;margin-top:15px;}
 .clean-tx-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;}
@@ -258,7 +260,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
   <a href="https://chat.whatsapp.com/Lt5D2AszEUmLkmATTY0dFr" target="_blank" class="social-float-btn whatsapp-float" title="Support WhatsApp">
    <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></path></svg>
   </a>
-  <a href="https://t.me/+pM-4oezPLog3MDU0" target="_blank" class="social-float-btn telegram-float" title="Canal Telegram">
+  <a href="https://t.me/Drcpro" target="_blank" class="social-float-btn telegram-float" title="Support Telegram @Drcpro">
    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.14-.26.26-.534.26l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.534-.195 1.001.132.834 1.043z"/></path></svg>
   </a>
  </div>
@@ -485,7 +487,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
    <h2>Demande de Retrait de Fonds</h2>
    <div class="info" style="margin-bottom:16px;">
     • Seuil minimal de retrait : <b class="danger">5 500 CDF</b><br>
-    • Frais de traitement : <b>7%</b>
+    • Frais de traitement : <b class="danger">15%</b>
    </div>
    <label>Opérateur de réception</label>
    <select id="withdrawOperator">
@@ -525,23 +527,21 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
   </div>
 
   <div class="section">
-   <h2>3. Programme de Parrainage (8 Niveaux)</h2>
+   <h2>3. Programme de Parrainage (3 Niveaux)</h2>
    <p style="font-size:13.5px; color:var(--muted); line-height:1.6; margin:0 0 12px;">
-    Développez votre réseau sur 8 niveaux automatiques et touchez des commissions attractives :
+    Développez votre réseau sur 3 niveaux et touchez des commissions attractives :
    </p>
    <div class="info" style="display:flex; flex-direction:column; gap:6px;">
-    <p><b>• Niveau 1 :</b> <span class="success">33%</span> de commission.</p>
-    <p><b>• Niveau 2 :</b> <span class="success">5%</span> de commission.</p>
-    <p><b>• Niveau 3 :</b> <span class="success">3%</span> de commission.</p>
-    <p><b>• Niveau 4 :</b> <span class="success">2%</span> de commission.</p>
-    <p><b>• Niveaux 5 à 8 :</b> <span class="success">1%</span> de commission chacun.</p>
+    <p><b>• Niveau 1 :</b> <span class="success">25%</span> de commission.</p>
+    <p><b>• Niveau 2 :</b> <span class="success">1%</span> de commission.</p>
+    <p><b>• Niveau 3 :</b> <span class="success">1%</span> de commission.</p>
    </div>
   </div>
 
   <div class="section">
    <h2>4. Politique de Retrait</h2>
    <p style="font-size:13.5px; color:var(--muted); line-height:1.6; margin:0;">
-    Retirez vos gains dès que votre solde atteint le minimum requis de <b class="danger">5 500 CDF</b>. Les demandes sont traitées dans les plus brefs délais vers votre compte mobile money.
+    Retirez vos gains dès que votre solde atteint le minimum requis de <b class="danger">5 500 CDF</b> (nécessite au moins un produit actif et validé). Les demandes sont traitées dans les plus brefs délais vers votre compte mobile money.
    </p>
   </div>
  </main>
@@ -549,7 +549,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
  <main id="viewEquipe" class="container main-view hidden">
   <div class="hero" style="background:linear-gradient(135deg, #1a1a1a 0%, #333333 100%)">
    <h1>Réseau Partenaire 👥</h1>
-   <p>Suivez l'évolution de votre équipe sur 8 niveaux et l'accumulation de vos commissions.</p>
+   <p>Suivez l'évolution de votre équipe sur 3 niveaux et l'accumulation de vos commissions.</p>
   </div>
 
   <div class="section">
@@ -574,14 +574,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
    </div>
 
    <div class="team-tabs">
-    <button id="tabBtnN1" class="team-tab-btn active" onclick="switchTeamLevel(1)">Niveau 1 (33%)</button>
-    <button id="tabBtnN2" class="team-tab-btn" onclick="switchTeamLevel(2)">Niveau 2 (5%)</button>
-    <button id="tabBtnN3" class="team-tab-btn" onclick="switchTeamLevel(3)">Niveau 3 (3%)</button>
-    <button id="tabBtnN4" class="team-tab-btn" onclick="switchTeamLevel(4)">Niveau 4 (2%)</button>
-    <button id="tabBtnN5" class="team-tab-btn" onclick="switchTeamLevel(5)">Niveau 5 (1%)</button>
-    <button id="tabBtnN6" class="team-tab-btn" onclick="switchTeamLevel(6)">Niveau 6 (1%)</button>
-    <button id="tabBtnN7" class="team-tab-btn" onclick="switchTeamLevel(7)">Niveau 7 (1%)</button>
-    <button id="tabBtnN8" class="team-tab-btn" onclick="switchTeamLevel(8)">Niveau 8 (1%)</button>
+    <button id="tabBtnN1" class="team-tab-btn active" onclick="switchTeamLevel(1)">Niveau 1 (25%)</button>
+    <button id="tabBtnN2" class="team-tab-btn" onclick="switchTeamLevel(2)">Niveau 2 (1%)</button>
+    <button id="tabBtnN3" class="team-tab-btn" onclick="switchTeamLevel(3)">Niveau 3 (1%)</button>
    </div>
 
    <div id="teamSectionContainer">
@@ -611,6 +606,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
   <div class="section">
    <h2>Historiques & Gestion</h2>
    <div class="history-menu-grid">
+    <button class="history-nav-btn telegram-btn" onclick="window.open('https://t.me/Drcpro', '_blank')">
+     <span>💬 Service Client Telegram (@Drcpro)</span> <span>→</span>
+    </button>
     <button class="history-nav-btn" onclick="switchTab('histRecharges')">
      <span>📥 Dépôts & Recharges</span> <span>→</span>
     </button>
@@ -691,7 +689,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
   let timerInterval = null;
   let activeTeamLevelTab = 1;
 
-  const referralPercentages = { 1: 0.33, 2: 0.05, 3: 0.03, 4: 0.02, 5: 0.01, 6: 0.01, 7: 0.01, 8: 0.01 };
+  const referralPercentages = { 1: 0.25, 2: 0.01, 3: 0.01 };
 
   function generateMathQuestion() {
     const num1 = Math.floor(Math.random() * 10) + 1;
@@ -732,12 +730,14 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
    if(!u){
     u = { 
       phone: '', name: '', balance: 0, invested: 0, transactions: [], purchasedPlans: [], activeInvestments: [], 
-      team: { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [] }, 
+      team: { 1: [], 2: [], 3: [] }, 
       referredBy: '', myRefCode: '', isAdmin: false, isActive: true 
     };
    }
    if(!u.team) {
-     u.team = { 1: u.teamN1 || [], 2: u.teamN2 || [], 3: u.teamN3 || [], 4: [], 5: [], 6: [], 7: [], 8: [] };
+     u.team = { 1: [], 2: [], 3: [] };
+   } else {
+     u.team = { 1: u.team[1] || [], 2: u.team[2] || [], 3: u.team[3] || [] };
    }
    return u;
   }
@@ -751,13 +751,22 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
 
   window.switchTeamLevel = function(level) {
     activeTeamLevelTab = level;
-    for(let i = 1; i <= 8; i++) {
+    for(let i = 1; i <= 3; i++) {
       const btn = document.getElementById(`tabBtnN${i}`);
       if(btn) btn.classList.remove('active');
     }
     const currentBtn = document.getElementById(`tabBtnN${level}`);
     if(currentBtn) currentBtn.classList.add('active');
     renderTeamSection();
+  }
+
+  function formatPhoneMobile(phone) {
+    if (!phone) return '--';
+    let clean = phone.replace(/\D/g, '');
+    if (clean.length >= 9) {
+      return clean.substring(0, 2) + '****' + clean.substring(clean.length - 3);
+    }
+    return phone;
   }
 
   function renderTeamSection() {
@@ -772,7 +781,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
 
     let rowsHtml = levelMembers.map(m => `
       <tr>
-        <td><b>${m.phone}</b></td>
+        <td><b>${formatPhoneMobile(m.phone)}</b></td>
         <td>${m.date}</td>
         <td>${m.hasInvested ? '<span class="success">Oui</span>' : '<span class="muted">Non</span>'}</td>
         <td style="text-align:right;" class="success">+${m.comm || 0} CDF</td>
@@ -785,26 +794,28 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
        <span class="badge" style="background:var(--red-light); color:var(--red-primary); padding:4px 10px; border-radius:12px; font-weight:800;">${percentageLabel}%</span>
       </div>
       <p style="color:var(--muted); font-size:12px; margin:0 0 12px;">Membres : <b>${totalCount}</b> | Gains totaux : <span class="success">${totalComm.toLocaleString()} CDF</span></p>
-      <table class="team-table">
-       <thead>
-        <tr>
-         <th>Téléphone</th>
-         <th>Date</th>
-         <th>Investi</th>
-         <th style="text-align:right;">Commission</th>
-        </tr>
-       </thead>
-       <tbody>
-        ${rowsHtml}
-       </tbody>
-      </table>
+      <div style="overflow-x:auto;">
+       <table class="team-table">
+        <thead>
+         <tr>
+          <th>Téléphone</th>
+          <th>Date</th>
+          <th>Investi</th>
+          <th style="text-align:right;">Commission</th>
+         </tr>
+        </thead>
+        <tbody>
+         ${rowsHtml}
+        </tbody>
+       </table>
+      </div>
     `;
   }
 
   async function distributeChainCommissions(buyerPhone, amount, planName) {
     try {
       let currentPhone = buyerPhone;
-      for (let level = 1; level <= 8; level++) {
+      for (let level = 1; level <= 3; level++) {
         let userSnap = await getDoc(doc(db, "users", currentPhone));
         if (!userSnap.exists()) break;
         let userData = userSnap.data();
@@ -824,7 +835,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
         if (commissionAmount > 0) {
           sponsorData.balance += commissionAmount;
           
-          if(!sponsorData.team) sponsorData.team = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [] };
+          if(!sponsorData.team) sponsorData.team = { 1: [], 2: [], 3: [] };
           
           let memberEntry = sponsorData.team[level].find(m => m.phone === buyerPhone);
           if (memberEntry) {
@@ -881,7 +892,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
     if (!sponsorCode) return;
     try {
       let currentSponsorCode = sponsorCode;
-      for (let level = 1; level <= 8; level++) {
+      for (let level = 1; level <= 3; level++) {
         let q = query(collection(db, "users"), where("myRefCode", "==", currentSponsorCode));
         let querySnapshot = await getDocs(q);
         if (querySnapshot.empty) break;
@@ -889,7 +900,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
         let sponsorDocRef = querySnapshot.docs[0].ref;
         let sponsorData = querySnapshot.docs[0].data();
 
-        if(!sponsorData.team) sponsorData.team = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [] };
+        if(!sponsorData.team) sponsorData.team = { 1: [], 2: [], 3: [] };
 
         let exists = sponsorData.team[level].some(m => m.phone === newUserPhone);
         if (!exists) {
@@ -946,7 +957,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
         balance: 1500, invested: 0, 
         transactions: [{ type: 'Bonus de bienvenue', amount: 1500, date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}), status: 'Approuvé' }], 
         purchasedPlans: [], activeInvestments: [], 
-        team: { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [] },
+        team: { 1: [], 2: [], 3: [] },
         referredBy: refCode || '', myRefCode: generatedRefCode, isAdmin: false, isActive: true
       };
 
@@ -976,7 +987,8 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
       const userSnap = await getDoc(userDocRef);
       if(userSnap.exists()){
         let u = userSnap.data();
-        if(!u.team) u.team = { 1: [], 2: [], 3: [], 4: [], 5: [], 6: [], 7: [], 8: [] };
+        if(!u.team) u.team = { 1: [], 2: [], 3: [] };
+        else u.team = { 1: u.team[1] || [], 2: u.team[2] || [], 3: u.team[3] || [] };
         localStorage.setItem('rawbankUser', JSON.stringify(u));
       }
       btn.disabled = false;
@@ -1062,7 +1074,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
 
    let totalMembersCount = 0;
    let totalCommissionsSum = 0;
-   for(let i = 1; i <= 8; i++) {
+   for(let i = 1; i <= 3; i++) {
      const list = u.team[i] || [];
      totalMembersCount += list.length;
      totalCommissionsSum += list.reduce((acc, m) => acc + (m.comm || 0), 0);
@@ -1169,7 +1181,14 @@ input:focus,select:focus,textarea:focus{border-color:var(--red-primary);box-shad
    const amount = Number(document.getElementById('withdrawAmount').value);
    const phone = document.getElementById('withdrawPhone').value.trim();
    if(!amount || amount < 5500 || !phone) { alert('Veuillez vérifier les informations (montant minimal : 5 500 CDF).'); return; }
+   
    let u = getUserData();
+
+   if(!u.activeInvestments || u.activeInvestments.length === 0) {
+     alert('Retrait indisponible : vous devez disposer d’au moins un produit actif et validé avant de pouvoir effectuer un retrait.');
+     return;
+   }
+
    if(u.balance < amount) { alert('Solde disponible insuffisant pour ce retrait.'); return; }
    u.balance -= amount;
    u.transactions.unshift({ type: 'Retrait', amount: amount, date: new Date().toLocaleDateString(), status: 'En cours' });
