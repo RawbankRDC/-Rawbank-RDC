@@ -1715,42 +1715,21 @@
         <div class="deposit-step" id="deposit-method-choice">
           <div class="deposit-step-head"><div class="deposit-step-number">1</div><div class="deposit-step-title">Choisir le mode de paiement</div></div>
           <div class="payment-method-grid">
-            <button type="button" class="payment-method-card" onclick="chooseDepositMethod('auto')"><span class="payment-method-icon"><i class="fa-solid fa-bolt"></i></span><strong>Paiement automatique</strong><small>Payer via la page de paiement sécurisée.</small><span class="payment-method-cta">Choisir <i class="fa-solid fa-arrow-right"></i></span></button>
             <button type="button" class="payment-method-card" onclick="chooseDepositMethod('manual')"><span class="payment-method-icon manual"><i class="fa-solid fa-mobile-screen-button"></i></span><strong>Paiement manuel</strong><small>Envoyer l’argent puis confirmer avec l’ID de transaction.</small><span class="payment-method-cta">Choisir <i class="fa-solid fa-arrow-right"></i></span></button>
           </div>
-        </div>
-        <div id="deposit-auto-panel" hidden>
-          <div class="deposit-step"><div class="deposit-step-head"><div class="deposit-step-number">2</div><div class="deposit-step-title">Choisir le produit et le montant</div></div><div class="amount-grid" id="deposit-amount-list"></div></div>
-          <div class="deposit-step"><div class="deposit-step-head"><div class="deposit-step-number">3</div><div class="deposit-step-title">Choisir le réseau Mobile Money</div></div>
-            <div class="network-grid">
-              <button type="button" class="network-option" data-network="Orange Money" onclick="selectDepositNetwork(this,'Orange Money')"><span class="network-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span><span class="network-name">Orange Money</span><span class="network-sub">Mobile Money — RDC</span></span></button>
-              <button type="button" class="network-option" data-network="M-Pesa" onclick="selectDepositNetwork(this,'M-Pesa')"><span class="network-icon"><i class="fa-solid fa-money-bill-transfer"></i></span><span><span class="network-name">M-Pesa</span><span class="network-sub">Mobile Money — RDC</span></span></button>
-              <button type="button" class="network-option" data-network="Airtel Money" onclick="selectDepositNetwork(this,'Airtel Money')"><span class="network-icon"><i class="fa-solid fa-signal"></i></span><span><span class="network-name">Airtel Money</span><span class="network-sub">Mobile Money — RDC</span></span></button>
-            </div>
-          </div>
-          <div class="deposit-step"><div class="deposit-step-head"><div class="deposit-step-number">4</div><div class="deposit-step-title">Confirmer le dépôt</div></div><div class="deposit-summary"><div class="summary-row"><span>Produit</span><strong id="deposit-summary-product">—</strong></div><div class="summary-row"><span>Montant</span><strong id="deposit-summary-amount">—</strong></div><div class="summary-row"><span>Pays</span><strong>RDC</strong></div><div class="summary-row"><span>Réseau</span><strong id="deposit-summary-network">—</strong></div></div><button id="deposit-pay-btn" class="deposit-pay-btn" disabled onclick="startDepositPayment()"><i class="fa-solid fa-lock"></i> Continuer vers le paiement sécurisé</button></div>
-          <button type="button" class="deposit-back-btn" onclick="chooseDepositMethod('')"><i class="fa-solid fa-arrow-left"></i> Changer de mode de paiement</button>
         </div>
         <div id="deposit-manual-panel" hidden>
           <div class="deposit-step"><div class="deposit-step-head"><div class="deposit-step-number">2</div><div class="deposit-step-title">Choisir le montant à envoyer</div></div><div class="amount-grid" id="deposit-manual-amount-list"></div></div>
           <div class="deposit-step manual-instructions"><div class="deposit-step-head"><div class="deposit-step-number">3</div><div class="deposit-step-title">Paiement manuel — choisir un réseau</div></div><p>Choisissez votre réseau. Le numéro correspondant s’affichera. Envoyez exactement le montant du produit choisi, puis saisissez l’ID de transaction.</p><div class="network-grid manual-network-grid">
-            <button type="button" class="network-option" onclick="selectManualNetwork(this,'Orange Money')"><span class="network-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span><span class="network-name">Orange</span><span class="network-sub">Orange Money</span></span></button>
-            <button type="button" class="network-option" disabled aria-disabled="true" title="Pas encore disponible"><span class="network-icon"><i class="fa-solid fa-money-bill-transfer"></i></span><span><span class="network-name">Vodacom</span><span class="network-sub">Pas encore disponible</span></span></button>
+            <button type="button" class="network-option" onclick="notifyDepositNetworkUnavailable('Orange')"><span class="network-icon"><i class="fa-solid fa-mobile-screen-button"></i></span><span><span class="network-name">Orange</span><span class="network-sub">Pas encore disponible</span></span></button>
+            <button type="button" class="network-option" onclick="notifyDepositNetworkUnavailable('Vodacom')"><span class="network-icon"><i class="fa-solid fa-money-bill-transfer"></i></span><span><span class="network-name">Vodacom</span><span class="network-sub">Pas encore disponible</span></span></button>
             <button type="button" class="network-option" onclick="selectManualNetwork(this,'Airtel Money')"><span class="network-icon"><i class="fa-solid fa-signal"></i></span><span><span class="network-name">Airtel</span><span class="network-sub">Airtel Money</span></span></button>
-          </div><div class="manual-number-box"><small id="manual-network-label">Numéro de réception</small><strong id="manual-network-number">Choisissez Orange, Vodacom ou Airtel</strong><button type="button" class="copy-manual-number-btn" onclick="copyManualDepositNumber()"><i class="fa-regular fa-copy"></i> Copier le numéro</button><small id="manual-amount-label">Montant à envoyer : sélectionnez d’abord un produit.</small></div><label for="manual-payment-id" class="manual-label">Code ID / référence de transaction</label><input id="manual-payment-id" class="manual-input" type="text" maxlength="100" placeholder="Saisissez l’ID reçu après le paiement" autocomplete="off"><button type="button" class="deposit-pay-btn" onclick="submitManualDeposit()"><i class="fa-solid fa-paper-plane"></i> Confirmer mon paiement</button><p class="manual-warning"><i class="fa-solid fa-circle-info"></i> Après confirmation, votre dépôt apparaîtra « En cours » et sera vérifié par l’administration. Le solde ne sera crédité qu’après validation du paiement.</p></div>
+          </div><div class="manual-number-box"><small id="manual-network-label">Numéro de réception</small><strong id="manual-network-number">Veuillez choisir Airtel</strong><button type="button" class="copy-manual-number-btn" onclick="copyManualDepositNumber()"><i class="fa-regular fa-copy"></i> Copier le numéro</button><small id="manual-amount-label">Montant à envoyer : sélectionnez d’abord un produit.</small></div><label for="manual-payment-id" class="manual-label">Code ID / référence de transaction</label><input id="manual-payment-id" class="manual-input" type="text" maxlength="100" placeholder="Saisissez l’ID reçu après le paiement" autocomplete="off"><button type="button" class="deposit-pay-btn" onclick="submitManualDeposit()"><i class="fa-solid fa-paper-plane"></i> Confirmer mon paiement</button><p class="manual-warning"><i class="fa-solid fa-circle-info"></i> Après confirmation, votre dépôt apparaîtra « En cours » et sera vérifié par l’administration. Le solde ne sera crédité qu’après validation du paiement.</p></div>
           <button type="button" class="deposit-back-btn" onclick="chooseDepositMethod('')"><i class="fa-solid fa-arrow-left"></i> Changer de mode de paiement</button>
         </div>
       </div>
     </div>
 
-    <!-- ================= PAIEMENT IKEEPAY ================= -->
-    <div id="ikeepay-overlay" class="ikeepay-overlay">
-      <div class="ikeepay-shell">
-        <div class="ikeepay-top"><strong><i class="fa-solid fa-credit-card"></i> Paiement sécurisé</strong><button class="ikeepay-close" onclick="closeIkePay()" aria-label="Fermer"><i class="fa-solid fa-xmark"></i></button></div>
-        <div id="ikeepay-loading" class="ikeepay-loading"><i class="fa-solid fa-spinner fa-spin"></i> Chargement du paiement…</div>
-        <iframe id="ikeepay-iframe" title="Paiement iKeePay"></iframe>
-      </div>
-    </div>
 
     <!-- ================= JUSTIFICATIFS DE RETRAIT ================= -->
     <div id="page-justificatifs-retrait" class="tab-page">
@@ -3611,12 +3590,14 @@
     let selectedManualProduct = null;
     let selectedManualNetwork = '';
     // Remplacez ces valeurs par les numéros Mobile Money officiels de réception.
-    const MANUAL_DEPOSIT_NUMBERS = { 'Orange Money': '0849146537', 'Airtel Money': '0980072270' };
+    const MANUAL_DEPOSIT_NUMBERS = { 'Airtel Money': '0980072270' };
+    function notifyDepositNetworkUnavailable(network) {
+      showCustomModal({title: network + ' non disponible', message: 'Le numéro ' + network + ' n’est pas encore disponible pour les dépôts. Veuillez utiliser Airtel Money.', iconClass:'fa-solid fa-circle-info', type:'danger'});
+    }
     function chooseDepositMethod(method) {
-      const auto=document.getElementById('deposit-auto-panel');
+      // Les paiements automatiques ont été retirés : seul le dépôt manuel est disponible.
       const manual=document.getElementById('deposit-manual-panel');
-      auto.hidden = method !== 'auto';
-      manual.hidden = method !== 'manual';
+      if (manual) manual.hidden = method !== 'manual';
       if (method === 'manual') renderManualDepositProducts();
       if (method === '') { selectedDepositAmount=0; selectedDepositProduct=null; selectedDepositNetwork=''; selectedManualProduct=null; selectedManualNetwork=''; }
     }
@@ -3631,6 +3612,7 @@
       });
     }
     function selectManualNetwork(btn, network) {
+      if (network !== 'Airtel Money') { notifyDepositNetworkUnavailable(network.replace(' Money','')); return; }
       document.querySelectorAll('#deposit-manual-panel .network-option').forEach(x=>x.classList.remove('selected'));
       btn.classList.add('selected'); selectedManualNetwork=network;
       const label=document.getElementById('manual-network-label');
@@ -3642,7 +3624,7 @@
     async function copyManualDepositNumber() {
       const number = document.getElementById('manual-network-number')?.textContent?.trim() || '';
       if (!selectedManualNetwork || !MANUAL_DEPOSIT_NUMBERS[selectedManualNetwork]) {
-        showCustomModal({title:'Choisir un réseau',message:'Sélectionnez Orange, Vodacom ou Airtel pour afficher le numéro à copier.',iconClass:'fa-solid fa-circle-info',type:'danger'});
+        showCustomModal({title:'Choisir un réseau',message:'Le numéro Orange et le numéro Vodacom ne sont pas encore disponibles. Veuillez sélectionner Airtel Money.',iconClass:'fa-solid fa-circle-info',type:'danger'});
         return;
       }
       try {
@@ -3660,7 +3642,7 @@
       const id=(document.getElementById('manual-payment-id')?.value||'').trim();
       if(!currentUser){showCustomModal({title:'Connexion requise',message:'Connectez-vous avant de confirmer un dépôt.',iconClass:'fa-solid fa-lock',type:'danger'});return;}
       if(!selectedManualProduct){showCustomModal({title:'Choisir un montant',message:'Sélectionnez d’abord le produit correspondant au montant envoyé.',iconClass:'fa-solid fa-circle-info',type:'danger'});return;}
-      if(!selectedManualNetwork){showCustomModal({title:'Choisir un réseau',message:'Choisissez Orange, Vodacom ou Airtel avant de confirmer.',iconClass:'fa-solid fa-circle-info',type:'danger'});return;}
+      if(!selectedManualNetwork){showCustomModal({title:'Choisir un réseau',message:'Orange et Vodacom ne sont pas encore disponibles. Veuillez choisir Airtel Money pour votre dépôt.',iconClass:'fa-solid fa-circle-info',type:'danger'});return;}
       if(id.length<4){showCustomModal({title:'Code ID requis',message:'Saisissez le code ID ou la référence de transaction reçu après le paiement.',iconClass:'fa-solid fa-circle-info',type:'danger'});return;}
       const orderId='MAN'+Date.now().toString(36).toUpperCase();
       const request={id:orderId,amount:Number(selectedManualProduct.amount),method:'Paiement manuel — '+selectedManualNetwork,network:selectedManualNetwork,paymentId:id,ref:orderId,product:`${selectedManualProduct.code} ${selectedManualProduct.name}`,currency:'CDF',status:'En cours',createdAt:new Date().toISOString(),date:new Date().toISOString()};
@@ -3706,55 +3688,7 @@
     }
 
     async function startDepositPayment() {
-      if (!selectedDepositAmount || !selectedDepositNetwork || !selectedDepositProduct) return;
-      const fb = window.gnedeFirebase;
-      const currentUser = fb?.auth?.currentUser;
-      if (!currentUser) {
-        showCustomModal({title:'Connexion requise',message:'Connectez-vous avant de lancer un dépôt.',iconClass:'fa-solid fa-lock',type:'danger'});
-        return;
-      }
-
-      const orderId = 'GN' + Date.now().toString(36).toUpperCase() + Math.random().toString(36).slice(2,5).toUpperCase();
-      const depositRequest = {
-        id: orderId,
-        amount: Number(selectedDepositAmount),
-        method: selectedDepositNetwork,
-        network: selectedDepositNetwork,
-        ref: orderId,
-        product: selectedDepositProduct ? `${selectedDepositProduct.code || ''} ${selectedDepositProduct.name || ''}`.trim() : '',
-        currency: 'CDF',
-        status: 'Non terminé',
-        createdAt: new Date().toISOString(),
-        date: new Date().toISOString()
-      };
-
-      showCharcrisProcess('Préparation du dépôt','Nous préparons la page de paiement sécurisée…','fa-solid fa-arrow-right');
-      try {
-        const userRef = fb.doc(fb.db, 'users', currentUser.uid);
-        await fb.updateDoc(userRef, {
-          'transactions.recharge': fb.arrayUnion(depositRequest),
-          updatedAt: fb.serverTimestamp()
-        });
-      } catch (error) {
-        hideCharcrisProcess();
-        console.error('Impossible d’enregistrer la demande de dépôt:', error);
-        showCustomModal({title:'Dépôt non enregistré',message:'La demande n’a pas pu être enregistrée dans la base de données. Vérifiez votre connexion puis réessayez.',iconClass:'fa-solid fa-triangle-exclamation',type:'danger'});
-        return;
-      }
-
-      await waitCharcris(3000);hideCharcrisProcess();
-      const iframe=document.getElementById('ikeepay-iframe');
-      const overlay=document.getElementById('ikeepay-overlay');
-      const loading=document.getElementById('ikeepay-loading');
-      loading.style.display='flex';
-      const params=new URLSearchParams({
-        pk:GNEDE_IKEEPAY_PUBLIC_KEY,
-        amount:String(selectedDepositAmount),
-        currency:'CDF',
-        order_id:orderId
-      });
-      iframe.src='https://ikeepay.com/checkout/v1/inline?'+params.toString();
-      overlay.classList.add('open');
+      showCustomModal({title:'Paiement automatique indisponible',message:'Les paiements automatiques ont été retirés. Veuillez utiliser le paiement manuel.',iconClass:'fa-solid fa-circle-info',type:'danger'});
     }
 
     function closeIkePay() {
